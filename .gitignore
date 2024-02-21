@@ -7,5 +7,4 @@ test_slurm.sh
 /logs
 datasets/__pycache__
 venv/
-Makefile
 .python-version

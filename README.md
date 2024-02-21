@@ -19,17 +19,15 @@ BEARS Make Neuro-Symbolic Models Aware of their Reasoning Shortcuts, E. Marconat
 
 If you find the code useful, please consider citing it.
 
-[![Citation](https://img.shields.io/badge/Citation-CFF-ff69b4.svg)](CITATION.cff)
+[![Citation](https://img.shields.io/badge/Citation-CFF-ff69b4.svg)](https://github.com/samuelebortolotti/bears/blob/master/CITATION.cff)
 
-
-<figure>
-<img src=".github/bears_cover.jpg" alt="bears cover" width="50%" height="auto" style="display: block; margin-left: auto; margin-right: auto; width: 100%;">
-<figcaption text-align="center" style="display: block; margin-left: auto; margin-right: auto; width: 40%;"><br>Welcome, welcome, welcome <br>
+![Bears Cover](.github/bears_cover.jpg)
+<p text-align="center" style="display: block; margin-left: auto; margin-right: auto; width: 40%;">Welcome, welcome, welcome <br>
 To the <a href="https://en.wikipedia.org/wiki/Bear_in_the_Big_Blue_House">big blue house</a> <br>
 Door is open come on in <br>
 Now you're here <br>
-So lets... begin</figcaption>
-</figure>
+So lets... begin
+</p>
 
 ## Abstract
 
