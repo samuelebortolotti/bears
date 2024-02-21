@@ -17,7 +17,7 @@ jobs:
             make doc-layout
             make doc
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
