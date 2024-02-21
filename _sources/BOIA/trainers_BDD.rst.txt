@@ -1,0 +1,8 @@
+trainers\_BDD module
+====================
+
+.. automodule:: trainers_BDD
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

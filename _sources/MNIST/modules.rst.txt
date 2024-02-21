@@ -1,0 +1,15 @@
+XOR_MNIST
+=========
+
+.. toctree::
+   :maxdepth: 4
+
+   backbones
+   datasets
+   example
+   exp_best_args
+   experiments
+   main
+   models
+   server
+   utils

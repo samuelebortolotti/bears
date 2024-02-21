@@ -1,0 +1,50 @@
+datasets.utils package
+======================
+
+Submodules
+----------
+
+datasets.utils.base\_dataset module
+-----------------------------------
+
+.. automodule:: datasets.utils.base_dataset
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+datasets.utils.kand\_creation module
+------------------------------------
+
+.. automodule:: datasets.utils.kand_creation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+datasets.utils.mnist\_creation module
+-------------------------------------
+
+.. automodule:: datasets.utils.mnist_creation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+datasets.utils.old\_kand\_creation module
+-----------------------------------------
+
+.. automodule:: datasets.utils.old_kand_creation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+Module contents
+---------------
+
+.. automodule:: datasets.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

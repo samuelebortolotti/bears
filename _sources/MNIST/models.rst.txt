@@ -1,0 +1,148 @@
+models package
+==============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   models.utils
+
+Submodules
+----------
+
+models.cext module
+------------------
+
+.. automodule:: models.cext
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.cvae module
+------------------
+
+.. automodule:: models.cvae
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.kanddpl module
+---------------------
+
+.. automodule:: models.kanddpl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.kandpreprocess module
+----------------------------
+
+.. automodule:: models.kandpreprocess
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.minikanddpl module
+-------------------------
+
+.. automodule:: models.minikanddpl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.mnistdpl module
+----------------------
+
+.. automodule:: models.mnistdpl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.mnistdplrec module
+-------------------------
+
+.. automodule:: models.mnistdplrec
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.mnistltn module
+----------------------
+
+.. automodule:: models.mnistltn
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.mnistltnrec module
+-------------------------
+
+.. automodule:: models.mnistltnrec
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.mnistpcbmdpl module
+--------------------------
+
+.. automodule:: models.mnistpcbmdpl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.mnistpcbmltn module
+--------------------------
+
+.. automodule:: models.mnistpcbmltn
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.mnistpcbmsl module
+-------------------------
+
+.. automodule:: models.mnistpcbmsl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.mnistsl module
+---------------------
+
+.. automodule:: models.mnistsl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+models.mnistslrec module
+------------------------
+
+.. automodule:: models.mnistslrec
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+Module contents
+---------------
+
+.. automodule:: models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

@@ -1,0 +1,8 @@
+parametrizers module
+====================
+
+.. automodule:: parametrizers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

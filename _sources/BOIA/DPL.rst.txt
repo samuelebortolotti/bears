@@ -1,0 +1,50 @@
+DPL package
+===========
+
+Submodules
+----------
+
+DPL.dpl module
+--------------
+
+.. automodule:: DPL.dpl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+DPL.dpl\_auc module
+-------------------
+
+.. automodule:: DPL.dpl_auc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+DPL.dpl\_auc\_pcbm module
+-------------------------
+
+.. automodule:: DPL.dpl_auc_pcbm
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+DPL.utils\_problog module
+-------------------------
+
+.. automodule:: DPL.utils_problog
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+Module contents
+---------------
+
+.. automodule:: DPL
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

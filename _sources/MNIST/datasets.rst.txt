@@ -1,0 +1,85 @@
+datasets package
+================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   datasets.utils
+
+Submodules
+----------
+
+datasets.addmnist module
+------------------------
+
+.. automodule:: datasets.addmnist
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+datasets.halfmnist module
+-------------------------
+
+.. automodule:: datasets.halfmnist
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+datasets.kandinsky module
+-------------------------
+
+.. automodule:: datasets.kandinsky
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+datasets.minikandinsky module
+-----------------------------
+
+.. automodule:: datasets.minikandinsky
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+datasets.prekandinsky module
+----------------------------
+
+.. automodule:: datasets.prekandinsky
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+datasets.restrictedmnist module
+-------------------------------
+
+.. automodule:: datasets.restrictedmnist
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+datasets.shortcutmnist module
+-----------------------------
+
+.. automodule:: datasets.shortcutmnist
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+Module contents
+---------------
+
+.. automodule:: datasets
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BEARS Make Neuro-Symbolic Models Aware of their Reasoning Shortcuts &mdash; bears 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=e031e9a9"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="XOR_MNIST" href="MNIST/modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            bears
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="MNIST/modules.html">XOR_MNIST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BOIA/modules.html">BDD_OIA</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">bears</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">BEARS Make Neuro-Symbolic Models Aware of their Reasoning Shortcuts</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bears-make-neuro-symbolic-models-aware-of-their-reasoning-shortcuts">
+<h1>BEARS Make Neuro-Symbolic Models Aware of their Reasoning Shortcuts<a class="headerlink" href="#bears-make-neuro-symbolic-models-aware-of-their-reasoning-shortcuts" title="Permalink to this heading"></a></h1>
+<p>Codebase for the paper:</p>
+<p>BEARS Make Neuro-Symbolic Models Aware of their Reasoning Shortcuts, E. Marconato, S. Bortolotti, E. van Krieken, A. Vergari, A. Passerini, S. Teso</p>
+<p><a class="reference external" href="https://arxiv.org/abs/2402.12240"><img alt="arXiv" src="https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg" /></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@misc</span><span class="p">{</span><span class="n">marconato2024bears</span><span class="p">,</span>
+      <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">BEARS</span> <span class="n">Make</span> <span class="n">Neuro</span><span class="o">-</span><span class="n">Symbolic</span> <span class="n">Models</span> <span class="n">Aware</span> <span class="n">of</span> <span class="n">their</span> <span class="n">Reasoning</span> <span class="n">Shortcuts</span><span class="p">},</span>
+      <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Emanuele</span> <span class="n">Marconato</span> <span class="ow">and</span> <span class="n">Samuele</span> <span class="n">Bortolotti</span> <span class="ow">and</span> <span class="n">Emile</span> <span class="n">van</span> <span class="n">Krieken</span> <span class="ow">and</span> <span class="n">Antonio</span> <span class="n">Vergari</span> <span class="ow">and</span> <span class="n">Andrea</span> <span class="n">Passerini</span> <span class="ow">and</span> <span class="n">Stefano</span> <span class="n">Teso</span><span class="p">},</span>
+      <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2024</span><span class="p">},</span>
+      <span class="n">eprint</span><span class="o">=</span><span class="p">{</span><span class="mf">2402.12240</span><span class="p">},</span>
+      <span class="n">archivePrefix</span><span class="o">=</span><span class="p">{</span><span class="n">arXiv</span><span class="p">},</span>
+      <span class="n">primaryClass</span><span class="o">=</span><span class="p">{</span><span class="n">cs</span><span class="o">.</span><span class="n">LG</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If you find the code useful, please consider citing it.</p>
+<p><a class="reference external" href="https://github.com/samuelebortolotti/bears/blob/master/CITATION.cff"><img alt="Citation" src="https://img.shields.io/badge/Citation-CFF-ff69b4.svg" /></a></p>
+<p><img alt="Bears Cover" src="_images/bears_cover.jpg" /></p>
+<p text-align="center" style="display: block; margin-left: auto; margin-right: auto; width: 40%;">Welcome, welcome, welcome <br>
+To the <a href="https://en.wikipedia.org/wiki/Bear_in_the_Big_Blue_House">big blue house</a> <br>
+Door is open come on in <br>
+Now you're here <br>
+So lets... begin
+</p>
+<section id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this heading"></a></h2>
+<p>Neuro-Symbolic (NeSy) predictors that conform to symbolic knowledge - encoding, e.g., safety constraints - can be affected by Reasoning Shortcuts (RSs): They learn concepts consistent with the symbolic knowledge by exploiting unintended semantics. RSs compromise reliability and generalization and, as we show in this paper, they are linked to NeSy models being overconfident about the predicted concepts. Unfortunately, the only trustworthy mitigation strategy requires collecting costly dense supervision over the concepts. Rather than attempting to avoid RSs altogether, we propose to ensure NeSy models are aware of the semantic ambiguity of the concepts they learn, thus enabling their users to identify and distrust low-quality concepts. Starting from three simple desiderata, we derive bears (BE Aware of Reasoning Shortcuts), an ensembling technique that calibrates the model’s concept-level confidence without compromising prediction accuracy, thus encouraging NeSy architectures to be uncertain about concepts affected by RSs. We show empirically that bears improves RS-awareness of several state-of-the-art NeSy models, and also facilitates acquiring informative dense annotations for mitigation purposes.</p>
+</section>
+<section id="installation-and-use">
+<h2>Installation and use<a class="headerlink" href="#installation-and-use" title="Permalink to this heading"></a></h2>
+<p>To run experiments on XOR, MNIST-Addition, Kandinsky and BDD-OIA, access the linux terminal and use the conda installation followed by pip3:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$conda env create -n rs python=3.8
+$conda activate rs
+$pip install -r requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="bdd-oia-2048">
+<h2>BDD-OIA (2048)<a class="headerlink" href="#bdd-oia-2048" title="Permalink to this heading"></a></h2>
+<p>BDD-OIA is a dataset of dashcams images for autonomous driving predictions, annotated with input-level objects (like bounding boxes of pedestrians, etc.) and concept-level entities (like “road is clear”). The original dataset can be found here: https://twizwei.github.io/bddoia_project/</p>
+<p>The dataset is preprocessed with a pretrained Faster-RCNN on BDD-100k and with the first module in CBM-AUC (Sawada and Nakamura, IEEE (2022)), leading to embeddings of dimension 2048. These are reported in the zip <code class="docutils literal notranslate"><span class="pre">bdd_2048.zip</span></code>. The original repo of CBM-AUC can be found here https://github.com/AISIN-TRC/CBM-AUC.</p>
+<p><img alt="BDD-OIA" src="_images/boia.png" /></p>
+<p>For usage, consider citing the original dataset creators and Sawada and Nakamura:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@InProceedings</span><span class="p">{</span><span class="n">xu2020cvpr</span><span class="p">,</span>
+<span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Xu</span><span class="p">,</span> <span class="n">Yiran</span> <span class="ow">and</span> <span class="n">Yang</span><span class="p">,</span> <span class="n">Xiaoyin</span> <span class="ow">and</span> <span class="n">Gong</span><span class="p">,</span> <span class="n">Lihang</span> <span class="ow">and</span> <span class="n">Lin</span><span class="p">,</span> <span class="n">Hsuan</span><span class="o">-</span><span class="n">Chu</span> <span class="ow">and</span> <span class="n">Wu</span><span class="p">,</span> <span class="n">Tz</span><span class="o">-</span><span class="n">Ying</span> <span class="ow">and</span> <span class="n">Li</span><span class="p">,</span> <span class="n">Yunsheng</span> <span class="ow">and</span> <span class="n">Vasconcelos</span><span class="p">,</span> <span class="n">Nuno</span><span class="p">},</span>
+<span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Explainable</span> <span class="n">Object</span><span class="o">-</span><span class="n">Induced</span> <span class="n">Action</span> <span class="n">Decision</span> <span class="k">for</span> <span class="n">Autonomous</span> <span class="n">Vehicles</span><span class="p">},</span>
+<span class="n">booktitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">IEEE</span><span class="o">/</span><span class="n">CVF</span> <span class="n">Conference</span> <span class="n">on</span> <span class="n">Computer</span> <span class="n">Vision</span> <span class="ow">and</span> <span class="n">Pattern</span> <span class="n">Recognition</span> <span class="p">(</span><span class="n">CVPR</span><span class="p">)},</span>
+<span class="n">month</span> <span class="o">=</span> <span class="p">{</span><span class="n">June</span><span class="p">},</span>
+<span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2020</span><span class="p">}}</span>
+
+<span class="nd">@ARTICLE</span><span class="p">{</span><span class="n">sawada2022cbm</span><span class="o">-</span><span class="n">auc</span><span class="p">,</span>
+  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Sawada</span><span class="p">,</span> <span class="n">Yoshihide</span> <span class="ow">and</span> <span class="n">Nakamura</span><span class="p">,</span> <span class="n">Keigo</span><span class="p">},</span>
+  <span class="n">journal</span><span class="o">=</span><span class="p">{</span><span class="n">IEEE</span> <span class="n">Access</span><span class="p">},</span>
+  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Concept</span> <span class="n">Bottleneck</span> <span class="n">Model</span> <span class="n">With</span> <span class="n">Additional</span> <span class="n">Unsupervised</span> <span class="n">Concepts</span><span class="p">},</span>
+  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2022</span><span class="p">},</span>
+  <span class="n">volume</span><span class="o">=</span><span class="p">{</span><span class="mi">10</span><span class="p">},</span>
+  <span class="n">number</span><span class="o">=</span><span class="p">{},</span>
+  <span class="n">pages</span><span class="o">=</span><span class="p">{</span><span class="mi">41758</span><span class="o">-</span><span class="mi">41765</span><span class="p">},</span>
+  <span class="n">doi</span><span class="o">=</span><span class="p">{</span><span class="mf">10.1109</span><span class="o">/</span><span class="n">ACCESS</span><span class="mf">.2022.3167702</span><span class="p">}}</span>
+</pre></div>
+</div>
+</section>
+<section id="mnist">
+<h2>MNIST<a class="headerlink" href="#mnist" title="Permalink to this heading"></a></h2>
+<p>This repository comprises several MNIST variations. The most relevant ones are:</p>
+<p><strong>MNIST-Even-Odd:</strong></p>
+<p>The MNIST-Even-Odd dataset is a variant of MNIST-Addition introduced by Marconato et al. (2023b). It consists of specific combinations of digits, including only even or odd digits, such as 0+6=6, 2+8=10, and 1+5=6. The dataset comprises 6720 fully annotated samples in the training set, 1920 samples in the validation set, and 960 samples in the in-distribution test set. Additionally, there are 5040 samples in the out-of-distribution test dataset, covering all other sums not observed during training. The dataset is associated with reasoning shortcuts, and the number of deterministic RSs was calculated to be 49 by solving a linear system.</p>
+<p><strong>MNIST-Half:</strong></p>
+<p>MNIST-Half is a biased version of MNIST-Addition, focusing on digits ranging from 0 to 4. Selected digit combinations include 0+0=0, 0+1=1, 2+3=5, and 2+4=6. Unlike MNIST-Even-Odd, two digits (0 and 1) are not affected by reasoning shortcuts, while 2, 3, and 4 can be predicted differently. The dataset comprises 2940 fully annotated samples in the training set, 840 samples in the validation set, and 420 samples in the test set. Additionally, there are 1080 samples in the out-of-distribution test dataset, covering remaining sums with the included digits.</p>
+</section>
+<section id="kandinksy">
+<h2>Kandinksy<a class="headerlink" href="#kandinksy" title="Permalink to this heading"></a></h2>
+<p>The Kandinsky dataset, introduced by Müller and Holzinger in 2021, features visual patterns inspired by the artistic works of Wassily Kandinsky. Each pattern is constructed with geometric figures and encompasses two main concepts: shape and color. The dataset proposes a variant of Kandinsky where each image contains a fixed number of figures, and each figure can have one of three possible colors (red, blue, yellow) and one of three possible shapes (square, circle, triangle).</p>
+<p>In an active learning setup, resembling an IQ test for machines, the task involves predicting the pattern of a third image given two images that share a common pattern. During inference, a model, such as the NeSy model mentioned in the experiment, computes a series of predicates like “same_cs” (same color and shape) and “same_ss” (same shape and same color). The model needs to choose the third image that completes the pattern based on these computed predicates. For example, if the first two images have different colors, the model should select the option that aligns with the observed pattern. The dataset provides a challenging task that tests a model’s ability to generalize and infer relationships between visual elements.</p>
+<p><img alt="Kandinsky pattern illustration" src="_images/kand-illustration.png" /></p>
+</section>
+<section id="structure-of-the-code">
+<h2>Structure of the code<a class="headerlink" href="#structure-of-the-code" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>The code structure is the same as <a class="reference external" href="https://github.com/ema-marconato/reasoning-shortcuts">Marconato Reasoning Shortcuts</a>: XOR, Kandinksy and MNIST-Addition are in single project folder, located in <code class="docutils literal notranslate"><span class="pre">XOR_MNIST</span></code>. Here, we defined:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">backbones</span></code> contains the architecture of the NNs used.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datasets</span></code> cointains the various versions of MNIST addition. If you want to add a dataset it has to be located here.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">example</span></code> is an independent folder containing all the experiments and setup for running XOR</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">models</span></code> contains all models used to benchmark the presence of RSs. Here, you can find DPL, SL, and LTN + recunstruction, but also a simple concept extractor (cext.py) and conditional VAEs (cvae.py)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">utils</span></code> contains the training loop, the losses, the metrics and (only wandb) loggers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">exp_best_args.py</span></code> is where I collected all best hyper-parameters for MNIST-Addition and XOR.</p></li>
+<li><p>you can use <code class="docutils literal notranslate"><span class="pre">experiments.py</span></code> to prepare a stack of experiments. If you run on a cluster, you can run <code class="docutils literal notranslate"><span class="pre">server.py</span></code> to access submitit and schedule a job array or use <code class="docutils literal notranslate"><span class="pre">run_start.sh</span></code> to run a single experiment.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BDD_OIA</span></code> follows the design of Sawada and can be executed launching <code class="docutils literal notranslate"><span class="pre">run_bdd.sh</span></code>. Hyperparameters are already set.</p></li>
+<li><p>args in <code class="docutils literal notranslate"><span class="pre">utils.args.py</span></code>:</p>
+<ul>
+<li><p>–dataset: choose the dataset</p></li>
+<li><p>–task: addition/product/multiop</p></li>
+<li><p>–model: which model you choose, remember to add rec at end if you want to add reconstruction penalty</p></li>
+<li><p>–c_sup: percentage of concept supervision. If zero, then 0% of examples are supervise, if 1, then 100% of examples have concept supervision</p></li>
+<li><p>–which_c: pass a list to specify which concepts you want to supervise, e.g. [1,2], will activate supervision for only concept 1 and 2</p></li>
+<li><p>–joint: if included it will process both MNIST digits all together</p></li>
+<li><p>–entropy: if included it will add the entropy penalty</p></li>
+<li><p>–w_sl: weight for the Semantic Loss</p></li>
+<li><p>–gamma: general weight for the mitigation strategy (this will multiply with other weights. My advice is to set it to 1)</p></li>
+<li><p>–wrec, –beta, –w_h, –w_c: different weights for penalties (see also args description)</p></li>
+<li><p>–do-test: activate the test method. Refer to this others arguments to try out all the possible testing operations.</p></li>
+<li><p>others are quite standard, consider using also:</p>
+<ul>
+<li><p>–wandb: put here the name of your project, like ‘i-dont-like-rss’</p></li>
+<li><p>–checkin, –checkout: specify path were to load and to save checkpoints, respectivey</p></li>
+<li><p>–validate: activate it to use the validation set (this is a switch from val to test)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="issues-report-bug-fixes-and-pull-requests">
+<h2>Issues report, bug fixes, and pull requests<a class="headerlink" href="#issues-report-bug-fixes-and-pull-requests" title="Permalink to this heading"></a></h2>
+<p>For all kind of problems do not hesitate to contact me. If you have additional mitigation strategies that you want to include as for others to test, please send me a pull request.</p>
+</section>
+<section id="makefile">
+<h2>Makefile<a class="headerlink" href="#makefile" title="Permalink to this heading"></a></h2>
+<p>To see the Makefile functions, simply call the appropriate help command with <a class="reference external" href="https://www.gnu.org/software/make/">GNU/Make</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span><span class="nb">help</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> provides a simple and convenient way to manage Python virtual environments (see <a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">venv</a>).</p>
+<section id="environment-creation">
+<h3>Environment creation<a class="headerlink" href="#environment-creation" title="Permalink to this heading"></a></h3>
+<p>In order to create the virtual enviroment and install the requirements be sure you have the Python 3.9 (it should work even with more recent versions, however I have tested it only with 3.9)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>env
+<span class="nb">source</span><span class="w"> </span>./venv/reasoning-shortcut/bin/activate
+make<span class="w"> </span>install
+</pre></div>
+</div>
+<p>Remember to deactivate the virtual enviroment once you have finished dealing with the project</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>deactivate
+</pre></div>
+</div>
+</section>
+<section id="generate-the-code-documentation">
+<h3>Generate the code documentation<a class="headerlink" href="#generate-the-code-documentation" title="Permalink to this heading"></a></h3>
+<p>The automatic code documentation is provided <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx v4.5.0</a>.</p>
+<p>In order to have the code documentation available, you need to install the development requirements</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.dev.txt
+</pre></div>
+</div>
+<p>Since Sphinx commands are quite verbose, I suggest you to employ the following commands using the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>doc-layout
+make<span class="w"> </span>doc
+</pre></div>
+</div>
+<p>The generated documentation will be accessible by opening <code class="docutils literal notranslate"><span class="pre">docs/build/html/index.html</span></code> in your browser, or equivalently by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>open-doc
+</pre></div>
+</div>
+<p>However, for the sake of completeness one may want to run the full Sphinx commands listed here.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-quickstart<span class="w"> </span>docs<span class="w"> </span>--sep<span class="w"> </span>--no-batchfile<span class="w"> </span>--project<span class="w"> </span>bears--author<span class="w"> </span><span class="s2">&quot;The Reasoning Shortcut Gang&quot;</span><span class="w">  </span>-r<span class="w"> </span><span class="m">0</span>.1<span class="w">  </span>--language<span class="w"> </span>en<span class="w"> </span>--extensions<span class="w"> </span>sphinx.ext.autodoc<span class="w"> </span>--extensions<span class="w"> </span>sphinx.ext.napoleon<span class="w"> </span>--extensions<span class="w"> </span>sphinx.ext.viewcode<span class="w"> </span>--extensions<span class="w"> </span>myst_parser
+sphinx-apidoc<span class="w"> </span>-P<span class="w"> </span>-o<span class="w"> </span>docs/source<span class="w"> </span>.
+<span class="nb">cd</span><span class="w"> </span>docs<span class="p">;</span><span class="w"> </span>make<span class="w"> </span>html
+</pre></div>
+</div>
+</section>
+</section>
+<section id="libraries-and-extra-tools">
+<h2>Libraries and extra tools<a class="headerlink" href="#libraries-and-extra-tools" title="Permalink to this heading"></a></h2>
+<p>This code is adapted from <a class="reference external" href="https://github.com/ema-marconato/reasoning-shortcuts">Marconato Reasoning Shortcuts</a>. To implement <a class="reference external" href="https://arxiv.org/abs/2306.01574">PCBMs</a>, we employed some functions from <a class="reference external" href="https://github.com/ejkim47/prob-cbm">Kim ProbCBM</a>.</p>
+</section>
+<section id="laplace">
+<h2>Laplace<a class="headerlink" href="#laplace" title="Permalink to this heading"></a></h2>
+<p>Since <a class="reference external" href="https://github.com/AlexImmer/Laplace">Laplace</a> is not meant to deal with a Neuro-Symbolic architecture and neither with multiclass classification problems, we define our <a class="reference external" href="https://github.com/samuelebortolotti/Laplace-Reasoning-Shortcut">own fork</a> which is expected to work <strong>only</strong> with our networks.</p>
+<p>Here we list the steps we performed:</p>
+<ol class="arabic simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">laplace/utils/feature_extractor.py</span></code></p></li>
+<li><p>Add the following line to <code class="docutils literal notranslate"><span class="pre">find_last_layer</span></code>:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="s1">&#39;original_model.encoder.dense_c&#39;</span> <span class="ow">and</span> <span class="n">key</span> <span class="o">!=</span> <span class="s1">&#39;original_model.conceptizer.enc1&#39;</span><span class="p">:</span>
+              <span class="k">continue</span>
+</pre></div>
+</div>
+<p>so that the library takes the concept bottleneck as the Laplace model.</p>
+<ol class="arabic simple" start="3">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">laplace/lllaplace.py</span></code></p></li>
+<li><p>Add the following line to <code class="docutils literal notranslate"><span class="pre">_nn_predictive_samples</span></code>:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">model_possibilities</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_samples</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n_samples</span><span class="p">)):</span>
+    <span class="n">vector_to_parameters</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">last_layer</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">model_possibilities</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sample</span>
+    <span class="n">fs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_device</span><span class="p">))</span><span class="o">.</span><span class="n">detach</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>so that the wrapper model knows to start tracking the output predictions.
+Where the added lines are: <code class="docutils literal notranslate"><span class="pre">self.model.model.model_possibilities</span> <span class="pre">=</span> <span class="pre">[None]</span> <span class="pre">*</span> <span class="pre">n_samples</span></code>
+and <code class="docutils literal notranslate"><span class="pre">self.model.model.model_possibilities[i]</span> <span class="pre">=</span> <span class="pre">sample</span></code></p>
+<p>Moreover in the file <code class="docutils literal notranslate"><span class="pre">laplace/curvature/curvature.py</span></code> change this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">BCE_forloop</span><span class="p">(</span><span class="n">tar</span><span class="p">,</span><span class="n">pred</span><span class="p">):</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">binary_cross_entropy</span><span class="p">(</span><span class="n">tar</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">pred</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">tar</span><span class="p">)):</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss</span> <span class="o">+</span> <span class="n">F</span><span class="o">.</span><span class="n">binary_cross_entropy</span><span class="p">(</span><span class="n">tar</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">pred</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">loss</span>
+
+<span class="k">def</span> <span class="nf">CE_forloop</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">):</span>
+    <span class="n">y_trues</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">y_preds</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+
+        <span class="n">true</span> <span class="o">=</span> <span class="n">y_trues</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="n">y_preds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="n">loss_i</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">nll_loss</span><span class="p">(</span> <span class="n">pred</span><span class="o">.</span><span class="n">log</span><span class="p">(),</span> <span class="n">true</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span> <span class="p">)</span>
+        <span class="n">loss</span> <span class="o">+=</span> <span class="n">loss_i</span> <span class="o">/</span> <span class="mi">4</span>
+
+        <span class="k">assert</span> <span class="n">loss_i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pred</span><span class="o">.</span><span class="n">log</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">loss</span>
+
+<span class="k">class</span> <span class="nc">CurvatureInterface</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Interface to access curvature for a model and corresponding likelihood.</span>
+<span class="sd">    A `CurvatureInterface` must inherit from this baseclass and implement the</span>
+<span class="sd">    necessary functions `jacobians`, `full`, `kron`, and `diag`.</span>
+<span class="sd">    The interface might be extended in the future to account for other curvature</span>
+<span class="sd">    structures, for example, a block-diagonal one.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    model : torch.nn.Module or `laplace.utils.feature_extractor.FeatureExtractor`</span>
+<span class="sd">        torch model (neural network)</span>
+<span class="sd">    likelihood : {&#39;classification&#39;, &#39;regression&#39;}</span>
+<span class="sd">    last_layer : bool, default=False</span>
+<span class="sd">        only consider curvature of last layer</span>
+<span class="sd">    subnetwork_indices : torch.Tensor, default=None</span>
+<span class="sd">        indices of the vectorized model parameters that define the subnetwork</span>
+<span class="sd">        to apply the Laplace approximation over</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    lossfunc : torch.nn.MSELoss or torch.nn.CrossEntropyLoss</span>
+<span class="sd">    factor : float</span>
+<span class="sd">        conversion factor between torch losses and base likelihoods</span>
+<span class="sd">        For example, \\(\\frac{1}{2}\\) to get to \\(\\mathcal{N}(f, 1)\\) from MSELoss.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">likelihood</span><span class="p">,</span> <span class="n">last_layer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">subnetwork_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">likelihood</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;regression&#39;</span><span class="p">,</span> <span class="s1">&#39;classification&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">likelihood</span> <span class="o">=</span> <span class="n">likelihood</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_layer</span> <span class="o">=</span> <span class="n">last_layer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subnetwork_indices</span> <span class="o">=</span> <span class="n">subnetwork_indices</span>
+        <span class="k">if</span> <span class="n">likelihood</span> <span class="o">==</span> <span class="s1">&#39;regression&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lossfunc</span> <span class="o">=</span> <span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">factor</span> <span class="o">=</span> <span class="mf">0.5</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lossfunc</span> <span class="o">=</span> <span class="n">CrossEntropyLoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
+            <span class="c1"># self.lossfunc = CE_forloop</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">factor</span> <span class="o">=</span> <span class="mf">1.</span>
+</pre></div>
+</div>
+<p>where for MNIST <code class="docutils literal notranslate"><span class="pre">self.lossfunc</span> <span class="pre">=</span> <span class="pre">CrossEntropyLoss(reduction='sum')</span></code> and for BDD <code class="docutils literal notranslate"><span class="pre">self.lossfunc</span> <span class="pre">=</span> <span class="pre">CE_forloop</span></code></p>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading"></a></h2>
+<p>The authors are grateful to Zhe Zeng for useful discussion. Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Health and Digital Executive Agency (HaDEA). Neither the European Union nor the granting authority can be held responsible for them. Grant Agreement no. 101120763 - TANGO. AV is supported by the “UNREAL: Unified Reasoning Layer for Trustworthy ML” project (EP/Y023838/1) selected by the ERC and funded by UKRI EPSRC.</p>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="MNIST/modules.html">XOR_MNIST</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="MNIST/backbones.html">backbones package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/backbones.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="MNIST/backbones.base.html">backbones.base package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/backbones.base.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/backbones.base.html#backbones-base-base-decoder-module">backbones.base.base_decoder module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/backbones.base.html#backbones-base-base-encoder-module">backbones.base.base_encoder module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/backbones.base.html#backbones-base-ops-module">backbones.base.ops module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/backbones.base.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/backbones.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/backbones.html#backbones-addmnist-joint-module">backbones.addmnist_joint module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/backbones.html#backbones-addmnist-repeated-module">backbones.addmnist_repeated module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/backbones.html#backbones-addmnist-single-module">backbones.addmnist_single module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/backbones.html#backbones-disent-encoder-decoder-module">backbones.disent_encoder_decoder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/backbones.html#backbones-kand-encoder-module">backbones.kand_encoder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/backbones.html#backbones-resnet-module">backbones.resnet module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/backbones.html#backbones-simple-encoder-module">backbones.simple_encoder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/backbones.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="MNIST/datasets.html">datasets package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/datasets.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="MNIST/datasets.utils.html">datasets.utils package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/datasets.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/datasets.utils.html#datasets-utils-base-dataset-module">datasets.utils.base_dataset module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/datasets.utils.html#datasets-utils-kand-creation-module">datasets.utils.kand_creation module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/datasets.utils.html#datasets-utils-mnist-creation-module">datasets.utils.mnist_creation module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/datasets.utils.html#datasets-utils-old-kand-creation-module">datasets.utils.old_kand_creation module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/datasets.utils.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/datasets.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/datasets.html#datasets-addmnist-module">datasets.addmnist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/datasets.html#datasets-halfmnist-module">datasets.halfmnist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/datasets.html#datasets-kandinsky-module">datasets.kandinsky module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/datasets.html#datasets-minikandinsky-module">datasets.minikandinsky module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/datasets.html#datasets-prekandinsky-module">datasets.prekandinsky module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/datasets.html#datasets-restrictedmnist-module">datasets.restrictedmnist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/datasets.html#datasets-shortcutmnist-module">datasets.shortcutmnist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/datasets.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="MNIST/example.html">example package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/example.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/example.html#example-dpl-models-module">example.dpl_models module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/example.html#example-dpl-train-module">example.dpl_train module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/example.html#example-ltn-models-module">example.ltn_models module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/example.html#example-ltn-train-module">example.ltn_train module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/example.html#example-nesy-losses-module">example.nesy_losses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/example.html#example-sl-models-module">example.sl_models module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/example.html#example-sl-train-module">example.sl_train module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/example.html#example-xor-main-module">example.xor_main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/example.html#example-xor-metrics-module">example.xor_metrics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/example.html#example-xor-utils-module">example.xor_utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/example.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="MNIST/exp_best_args.html">exp_best_args module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MNIST/experiments.html">experiments module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MNIST/main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MNIST/models.html">models package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="MNIST/models.utils.html">models.utils package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/models.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/models.utils.html#models-utils-deepproblog-modules-module">models.utils.deepproblog_modules module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/models.utils.html#models-utils-ops-module">models.utils.ops module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/models.utils.html#models-utils-utils-problog-module">models.utils.utils_problog module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="MNIST/models.utils.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-cext-module">models.cext module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-cvae-module">models.cvae module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-kanddpl-module">models.kanddpl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-kandpreprocess-module">models.kandpreprocess module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-minikanddpl-module">models.minikanddpl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-mnistdpl-module">models.mnistdpl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-mnistdplrec-module">models.mnistdplrec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-mnistltn-module">models.mnistltn module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-mnistltnrec-module">models.mnistltnrec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-mnistpcbmdpl-module">models.mnistpcbmdpl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-mnistpcbmltn-module">models.mnistpcbmltn module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-mnistpcbmsl-module">models.mnistpcbmsl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-mnistsl-module">models.mnistsl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#models-mnistslrec-module">models.mnistslrec module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/models.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="MNIST/server.html">server module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MNIST/utils.html">utils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-args-module">utils.args module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-bayes-module">utils.bayes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-checkpoint-module">utils.checkpoint module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-conf-module">utils.conf module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-dpl-loss-module">utils.dpl_loss module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-generative-module">utils.generative module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-losses-module">utils.losses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-ltn-loss-module">utils.ltn_loss module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-metrics-module">utils.metrics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-normal-kl-divergence-module">utils.normal_kl_divergence module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-preprocess-resnet-module">utils.preprocess_resnet module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-semantic-loss-module">utils.semantic_loss module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-status-module">utils.status module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-test-module">utils.test module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-test-utils-module">utils.test_utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-train-module">utils.train module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-visualization-module">utils.visualization module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#utils-wandb-logger-module">utils.wandb_logger module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MNIST/utils.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="BOIA/modules.html">BDD_OIA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/DPL.html">DPL package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BOIA/DPL.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BOIA/DPL.html#dpl-dpl-module">DPL.dpl module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BOIA/DPL.html#dpl-dpl-auc-module">DPL.dpl_auc module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BOIA/DPL.html#dpl-dpl-auc-pcbm-module">DPL.dpl_auc_pcbm module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BOIA/DPL.html#dpl-utils-problog-module">DPL.utils_problog module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BOIA/DPL.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/SENN.html">SENN package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="BOIA/SENN.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BOIA/SENN.html#senn-arglist-module">SENN.arglist module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BOIA/SENN.html#senn-classifier-module">SENN.classifier module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BOIA/SENN.html#senn-eval-utils-module">SENN.eval_utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BOIA/SENN.html#senn-utils-module">SENN.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BOIA/SENN.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/aggregators.html">aggregators module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/aggregators_BDD.html">aggregators_BDD module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/conceptizers_BDD.html">conceptizers_BDD module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/experiments.html">experiments module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/main_bdd.html">main_bdd module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/models.html">models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/parametrizers.html">parametrizers module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/server.html">server module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/testers_BDD.html">testers_BDD module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/track_stuff.html">track_stuff module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/trainers_BDD.html">trainers_BDD module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/visualization.html">visualization module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BOIA/worlds_BDD.html">worlds_BDD module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MNIST/modules.html" class="btn btn-neutral float-right" title="XOR_MNIST" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Emanuele Marconato, Samuele Bortolotti, Emile van Krieken, Antonio Vergari, Andrea Passerini, Stefano Teso.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

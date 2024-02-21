@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XOR_MNIST &mdash; bears 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="backbones package" href="backbones.html" />
+    <link rel="prev" title="BEARS Make Neuro-Symbolic Models Aware of their Reasoning Shortcuts" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            bears
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">XOR_MNIST</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backbones.html">backbones package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html">datasets package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html">example package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exp_best_args.html">exp_best_args module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html">experiments module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html">server module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../BOIA/modules.html">BDD_OIA</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">bears</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">XOR_MNIST</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MNIST/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="xor-mnist">
+<h1>XOR_MNIST<a class="headerlink" href="#xor-mnist" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="backbones.html">backbones package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="backbones.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backbones.base.html">backbones.base package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="backbones.base.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="backbones.base.html#backbones-base-base-decoder-module">backbones.base.base_decoder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="backbones.base.html#backbones-base-base-encoder-module">backbones.base.base_encoder module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="backbones.base.html#backbones-base-ops-module">backbones.base.ops module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="backbones.base.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backbones.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backbones.html#backbones-addmnist-joint-module">backbones.addmnist_joint module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backbones.html#backbones-addmnist-repeated-module">backbones.addmnist_repeated module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backbones.html#backbones-addmnist-single-module">backbones.addmnist_single module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backbones.html#backbones-disent-encoder-decoder-module">backbones.disent_encoder_decoder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backbones.html#backbones-kand-encoder-module">backbones.kand_encoder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backbones.html#backbones-resnet-module">backbones.resnet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backbones.html#backbones-simple-encoder-module">backbones.simple_encoder module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backbones.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">datasets package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datasets.utils.html">datasets.utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="datasets.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasets.utils.html#datasets-utils-base-dataset-module">datasets.utils.base_dataset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasets.utils.html#datasets-utils-kand-creation-module">datasets.utils.kand_creation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasets.utils.html#datasets-utils-mnist-creation-module">datasets.utils.mnist_creation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasets.utils.html#datasets-utils-old-kand-creation-module">datasets.utils.old_kand_creation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasets.utils.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#datasets-addmnist-module">datasets.addmnist module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#datasets-halfmnist-module">datasets.halfmnist module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#datasets-kandinsky-module">datasets.kandinsky module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#datasets-minikandinsky-module">datasets.minikandinsky module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#datasets-prekandinsky-module">datasets.prekandinsky module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#datasets-restrictedmnist-module">datasets.restrictedmnist module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#datasets-shortcutmnist-module">datasets.shortcutmnist module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">example package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="example.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#example-dpl-models-module">example.dpl_models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#example-dpl-train-module">example.dpl_train module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#example-ltn-models-module">example.ltn_models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#example-ltn-train-module">example.ltn_train module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#example-nesy-losses-module">example.nesy_losses module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#example-sl-models-module">example.sl_models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#example-sl-train-module">example.sl_train module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#example-xor-main-module">example.xor_main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#example-xor-metrics-module">example.xor_metrics module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#example-xor-utils-module">example.xor_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exp_best_args.html">exp_best_args module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="experiments.html">experiments module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">models package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.utils.html">models.utils package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="models.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.utils.html#models-utils-deepproblog-modules-module">models.utils.deepproblog_modules module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.utils.html#models-utils-ops-module">models.utils.ops module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.utils.html#models-utils-utils-problog-module">models.utils.utils_problog module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="models.utils.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-cext-module">models.cext module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-cvae-module">models.cvae module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-kanddpl-module">models.kanddpl module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-kandpreprocess-module">models.kandpreprocess module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-minikanddpl-module">models.minikanddpl module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-mnistdpl-module">models.mnistdpl module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-mnistdplrec-module">models.mnistdplrec module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-mnistltn-module">models.mnistltn module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-mnistltnrec-module">models.mnistltnrec module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-mnistpcbmdpl-module">models.mnistpcbmdpl module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-mnistpcbmltn-module">models.mnistpcbmltn module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-mnistpcbmsl-module">models.mnistpcbmsl module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-mnistsl-module">models.mnistsl module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#models-mnistslrec-module">models.mnistslrec module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">server module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-args-module">utils.args module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-bayes-module">utils.bayes module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-checkpoint-module">utils.checkpoint module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-conf-module">utils.conf module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-dpl-loss-module">utils.dpl_loss module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-generative-module">utils.generative module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-losses-module">utils.losses module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-ltn-loss-module">utils.ltn_loss module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-metrics-module">utils.metrics module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-normal-kl-divergence-module">utils.normal_kl_divergence module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-preprocess-resnet-module">utils.preprocess_resnet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-semantic-loss-module">utils.semantic_loss module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-status-module">utils.status module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-test-module">utils.test module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-test-utils-module">utils.test_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-train-module">utils.train module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-visualization-module">utils.visualization module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#utils-wandb-logger-module">utils.wandb_logger module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="BEARS Make Neuro-Symbolic Models Aware of their Reasoning Shortcuts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="backbones.html" class="btn btn-neutral float-right" title="backbones package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Emanuele Marconato, Samuele Bortolotti, Emile van Krieken, Antonio Vergari, Andrea Passerini, Stefano Teso.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

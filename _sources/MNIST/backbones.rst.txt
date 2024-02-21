@@ -1,0 +1,85 @@
+backbones package
+=================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   backbones.base
+
+Submodules
+----------
+
+backbones.addmnist\_joint module
+--------------------------------
+
+.. automodule:: backbones.addmnist_joint
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+backbones.addmnist\_repeated module
+-----------------------------------
+
+.. automodule:: backbones.addmnist_repeated
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+backbones.addmnist\_single module
+---------------------------------
+
+.. automodule:: backbones.addmnist_single
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+backbones.disent\_encoder\_decoder module
+-----------------------------------------
+
+.. automodule:: backbones.disent_encoder_decoder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+backbones.kand\_encoder module
+------------------------------
+
+.. automodule:: backbones.kand_encoder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+backbones.resnet module
+-----------------------
+
+.. automodule:: backbones.resnet
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+backbones.simple\_encoder module
+--------------------------------
+
+.. automodule:: backbones.simple_encoder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+Module contents
+---------------
+
+.. automodule:: backbones
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

@@ -1,0 +1,50 @@
+SENN package
+============
+
+Submodules
+----------
+
+SENN.arglist module
+-------------------
+
+.. automodule:: SENN.arglist
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+SENN.classifier module
+----------------------
+
+.. automodule:: SENN.classifier
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+SENN.eval\_utils module
+-----------------------
+
+.. automodule:: SENN.eval_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+SENN.utils module
+-----------------
+
+.. automodule:: SENN.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+Module contents
+---------------
+
+.. automodule:: SENN
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

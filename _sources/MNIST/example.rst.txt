@@ -1,0 +1,104 @@
+example package
+===============
+
+Submodules
+----------
+
+example.dpl\_models module
+--------------------------
+
+.. automodule:: example.dpl_models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+example.dpl\_train module
+-------------------------
+
+.. automodule:: example.dpl_train
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+example.ltn\_models module
+--------------------------
+
+.. automodule:: example.ltn_models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+example.ltn\_train module
+-------------------------
+
+.. automodule:: example.ltn_train
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+example.nesy\_losses module
+---------------------------
+
+.. automodule:: example.nesy_losses
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+example.sl\_models module
+-------------------------
+
+.. automodule:: example.sl_models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+example.sl\_train module
+------------------------
+
+.. automodule:: example.sl_train
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+example.xor\_main module
+------------------------
+
+.. automodule:: example.xor_main
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+example.xor\_metrics module
+---------------------------
+
+.. automodule:: example.xor_metrics
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+example.xor\_utils module
+-------------------------
+
+.. automodule:: example.xor_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+Module contents
+---------------
+
+.. automodule:: example
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

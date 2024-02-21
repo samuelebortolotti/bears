@@ -1,0 +1,41 @@
+backbones.base package
+======================
+
+Submodules
+----------
+
+backbones.base.base\_decoder module
+-----------------------------------
+
+.. automodule:: backbones.base.base_decoder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+backbones.base.base\_encoder module
+-----------------------------------
+
+.. automodule:: backbones.base.base_encoder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+backbones.base.ops module
+-------------------------
+
+.. automodule:: backbones.base.ops
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
+
+Module contents
+---------------
+
+.. automodule:: backbones.base
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

@@ -1,0 +1,8 @@
+aggregators\_BDD module
+=======================
+
+.. automodule:: aggregators_BDD
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

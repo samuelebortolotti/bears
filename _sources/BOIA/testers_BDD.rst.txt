@@ -1,0 +1,8 @@
+testers\_BDD module
+===================
+
+.. automodule:: testers_BDD
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:

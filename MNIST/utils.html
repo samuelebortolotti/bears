@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>utils package &mdash; bears 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=e031e9a9"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="BDD_OIA" href="../BOIA/modules.html" />
+    <link rel="prev" title="server module" href="server.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            bears
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">XOR_MNIST</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="backbones.html">backbones package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html">datasets package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example.html">example package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exp_best_args.html">exp_best_args module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="experiments.html">experiments module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html">server module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">utils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-args-module">utils.args module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-bayes-module">utils.bayes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-checkpoint-module">utils.checkpoint module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-conf-module">utils.conf module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-dpl-loss-module">utils.dpl_loss module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-generative-module">utils.generative module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-losses-module">utils.losses module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-ltn-loss-module">utils.ltn_loss module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-metrics-module">utils.metrics module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-normal-kl-divergence-module">utils.normal_kl_divergence module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-preprocess-resnet-module">utils.preprocess_resnet module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-semantic-loss-module">utils.semantic_loss module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-status-module">utils.status module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-test-module">utils.test module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-test-utils-module">utils.test_utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-train-module">utils.train module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-visualization-module">utils.visualization module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utils-wandb-logger-module">utils.wandb_logger module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../BOIA/modules.html">BDD_OIA</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">bears</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">XOR_MNIST</a></li>
+      <li class="breadcrumb-item active">utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/MNIST/utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="utils-package">
+<h1>utils package<a class="headerlink" href="#utils-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-args-module">
+<h2>utils.args module<a class="headerlink" href="#utils-args-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-bayes-module">
+<h2>utils.bayes module<a class="headerlink" href="#utils-bayes-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-checkpoint-module">
+<h2>utils.checkpoint module<a class="headerlink" href="#utils-checkpoint-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-conf-module">
+<h2>utils.conf module<a class="headerlink" href="#utils-conf-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-dpl-loss-module">
+<h2>utils.dpl_loss module<a class="headerlink" href="#utils-dpl-loss-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-generative-module">
+<h2>utils.generative module<a class="headerlink" href="#utils-generative-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-losses-module">
+<h2>utils.losses module<a class="headerlink" href="#utils-losses-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-ltn-loss-module">
+<h2>utils.ltn_loss module<a class="headerlink" href="#utils-ltn-loss-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-metrics-module">
+<h2>utils.metrics module<a class="headerlink" href="#utils-metrics-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-normal-kl-divergence-module">
+<h2>utils.normal_kl_divergence module<a class="headerlink" href="#utils-normal-kl-divergence-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-preprocess-resnet-module">
+<h2>utils.preprocess_resnet module<a class="headerlink" href="#utils-preprocess-resnet-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-semantic-loss-module">
+<h2>utils.semantic_loss module<a class="headerlink" href="#utils-semantic-loss-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-status-module">
+<h2>utils.status module<a class="headerlink" href="#utils-status-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-test-module">
+<h2>utils.test module<a class="headerlink" href="#utils-test-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-test-utils-module">
+<h2>utils.test_utils module<a class="headerlink" href="#utils-test-utils-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-train-module">
+<h2>utils.train module<a class="headerlink" href="#utils-train-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-visualization-module">
+<h2>utils.visualization module<a class="headerlink" href="#utils-visualization-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="utils-wandb-logger-module">
+<h2>utils.wandb_logger module<a class="headerlink" href="#utils-wandb-logger-module" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="server.html" class="btn btn-neutral float-left" title="server module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../BOIA/modules.html" class="btn btn-neutral float-right" title="BDD_OIA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Emanuele Marconato, Samuele Bortolotti, Emile van Krieken, Antonio Vergari, Andrea Passerini, Stefano Teso.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

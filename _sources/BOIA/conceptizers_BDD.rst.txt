@@ -1,0 +1,8 @@
+conceptizers\_BDD module
+========================
+
+.. automodule:: conceptizers_BDD
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :private-members:
