@@ -1,0 +1,24 @@
+name: Sphinx Code Documentation GitHub Pages Deploy Action
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ammaraskar/sphinx-action@master
+        with:
+          docs-folder: "docs/"
+          pre-build-command: |
+            make install
+            make install-dev
+            make doc-layout
+            make doc
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: docs/build/html/
