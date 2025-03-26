@@ -939,7 +939,7 @@ def deep_ensemble(
     import wandb
     from datasets.utils.base_dataset import get_loader
 
-    def wandb_log_step_resense(i, epoch, loss_ce, loss_kl, prefix):
+    def wandb_log_step_bears(i, epoch, loss_ce, loss_kl, prefix):
         wandb.log(
             {
                 f"{prefix}loss-ce": loss_ce,
@@ -1201,7 +1201,7 @@ def deep_ensemble(
                         total_dist += distance
 
                     if use_wandb:
-                        wandb_log_step_resense(
+                        wandb_log_step_bears(
                             ti,
                             epoch,
                             loss_original,
@@ -1286,9 +1286,9 @@ def deep_ensemble(
 
         if args.checkout is not None:
             if args.real_kl:
-                PATH = f"data/ckpts/deepens_dset-{args.dataset}-resense-{separate_from_others}-model-{args.model}-seed-ensmember-{seed}-joint-{args.joint}-real-kl-{args.real_kl}.pt"
+                PATH = f"data/ckpts/deepens_dset-{args.dataset}-bears-{separate_from_others}-model-{args.model}-seed-ensmember-{seed}-joint-{args.joint}-real-kl-{args.real_kl}.pt"
             else:
-                PATH = f"data/ckpts/deepens_dset-{args.dataset}-resense-{separate_from_others}-model-{args.model}-seed-ensmember-{seed}-joint-{args.joint}.pt"
+                PATH = f"data/ckpts/deepens_dset-{args.dataset}-bears-{separate_from_others}-model-{args.model}-seed-ensmember-{seed}-joint-{args.joint}.pt"
             torch.save(model.state_dict(), PATH)
 
         # freeze the parameters of the model in the ensemble

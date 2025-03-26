@@ -1029,7 +1029,7 @@ def parse_args():
             "frequentist",
             "mcdropout",
             "laplace",
-            "resense",
+            "bears",
             "deepensembles",
         ],
         help="Select method to run",
@@ -1313,7 +1313,7 @@ def main(args):
             "frequentist",
             "mcdropout",
             "laplace",
-            "resense",
+            "bears",
             "deepensembles",
         ]
 
@@ -1328,7 +1328,7 @@ def main(args):
 
             separate_from_others = False
 
-            if bayes_method == "resense":
+            if bayes_method == "bears":
                 separate_from_others = True
 
             # Trains the ensemble only when ensemble is the model or approximate laplace
@@ -1351,7 +1351,7 @@ def main(args):
             # plot the losses for deep ensembles only
             if (
                 bayes_method == "deepensembles"
-                or bayes_method == "resense"
+                or bayes_method == "bears"
             ):
                 tester.plot_losses(
                     bayes_method, save_path=results_path
@@ -1433,7 +1433,7 @@ def main(args):
                         pcbm=args.pcbm,
                     )
 
-            if bayes_method in ["resense", "deepensembles"]:
+            if bayes_method in ["bears", "deepensembles"]:
                 tester.save_model_params_all(
                     save_path=results_path,
                     separate_from_others=separate_from_others,

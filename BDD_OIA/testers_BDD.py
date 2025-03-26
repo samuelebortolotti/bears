@@ -4170,7 +4170,7 @@ class ClassificationTesterFactory:
             return LaplaceBayes(model, args, device)
         elif name == "deepensembles":
             return DeepEnsembles(model, args, device, name)
-        elif name == "resense":
+        elif name == "bears":
             return DeepEnsembles(model, args, device, name)
         else:
             raise ValueError(

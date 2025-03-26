@@ -20,8 +20,8 @@ def launch_KAND(args):
     args.task = "patterns"
     args.posthoc = True
 
-    # activate resense
-    args.type = "resense"
+    # activate bears
+    args.type = "bears"
     args.n_models = 5
 
     # model specifics

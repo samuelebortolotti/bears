@@ -296,7 +296,7 @@ def get_stat(
     n_model,
     lambda_h="1.0",
     lambda_kl="1.0",
-    category="resense",
+    category="bears",
     train="test",
     set_wandb=False,
 ):
