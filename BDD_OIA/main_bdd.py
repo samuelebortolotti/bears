@@ -1023,7 +1023,7 @@ def parse_args():
     parser.add_argument(
         "--type",
         type=str,
-        default="none",
+        default="bears",
         choices=[
             "none",
             "frequentist",
