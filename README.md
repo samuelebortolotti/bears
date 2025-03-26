@@ -21,14 +21,6 @@ If you find the code useful, please consider citing it.
 
 [![Citation](https://img.shields.io/badge/Citation-CFF-ff69b4.svg)](https://github.com/samuelebortolotti/bears/blob/master/CITATION.cff)
 
-![Bears Cover](.github/bears_cover.jpg)
-<p text-align="center" style="display: block; margin-left: auto; margin-right: auto; width: 40%;">Welcome, welcome, welcome <br>
-To the <a href="https://en.wikipedia.org/wiki/Bear_in_the_Big_Blue_House">big blue house</a> <br>
-Door is open come on in <br>
-Now you're here <br>
-So lets... begin
-</p>
-
 ## Abstract
 
 Neuro-Symbolic (NeSy) predictors that conform to symbolic knowledge - encoding, e.g., safety constraints - can be affected by Reasoning Shortcuts (RSs): They learn concepts consistent with the symbolic knowledge by exploiting unintended semantics. RSs compromise reliability and generalization and, as we show in this paper, they are linked to NeSy models being overconfident about the predicted concepts. Unfortunately, the only trustworthy mitigation strategy requires collecting costly dense supervision over the concepts. Rather than attempting to avoid RSs altogether, we propose to ensure NeSy models are aware of the semantic ambiguity of the concepts they learn, thus enabling their users to identify and distrust low-quality concepts. Starting from three simple desiderata, we derive bears (BE Aware of Reasoning Shortcuts), an ensembling technique that calibrates the model's concept-level confidence without compromising prediction accuracy, thus encouraging NeSy architectures to be uncertain about concepts affected by RSs. We show empirically that bears improves RS-awareness of several state-of-the-art NeSy models, and also facilitates acquiring informative dense annotations for mitigation purposes. 
@@ -125,6 +117,19 @@ In an active learning setup, resembling an IQ test for machines, the task involv
         * --wandb: put here the name of your project, like 'i-dont-like-rss'
         * --checkin, --checkout: specify path were to load and to save checkpoints, respectivey
         * --validate: activate it to use the validation set (this is a switch from val to test)
+
+
+## Using `bears`
+
+After training the model, you can evaluate it using one of several strategies by running the program with the `--posthoc` flag and specifying the desired method with the `--type` option. The available evaluation strategies are:
+
+- `frequentist`: Evaluates the model without any Bayesian approximation.
+- `mcdropout`: Applies Monte Carlo dropout for uncertainty estimation.
+- `ensemble`: Uses a standard deep ensemble of models.
+- `laplace`: Applies a Laplace approximation to the model's weights.
+- `bears`: Uses `bears`.
+
+Alternatively, to run all strategies at once, you can use the `--evaluate-all` flag.
 
 ## Issues report, bug fixes, and pull requests
 

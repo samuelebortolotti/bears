@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BEARS Make Neuro-Symbolic Models Aware of their Reasoning Shortcuts &mdash; bears 0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
@@ -88,13 +88,6 @@
 </div>
 <p>If you find the code useful, please consider citing it.</p>
 <p><a class="reference external" href="https://github.com/samuelebortolotti/bears/blob/master/CITATION.cff"><img alt="Citation" src="https://img.shields.io/badge/Citation-CFF-ff69b4.svg" /></a></p>
-<p><img alt="Bears Cover" src="_images/bears_cover.jpg" /></p>
-<p text-align="center" style="display: block; margin-left: auto; margin-right: auto; width: 40%;">Welcome, welcome, welcome <br>
-To the <a href="https://en.wikipedia.org/wiki/Bear_in_the_Big_Blue_House">big blue house</a> <br>
-Door is open come on in <br>
-Now you're here <br>
-So lets... begin
-</p>
 <section id="abstract">
 <h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this heading"></a></h2>
 <p>Neuro-Symbolic (NeSy) predictors that conform to symbolic knowledge - encoding, e.g., safety constraints - can be affected by Reasoning Shortcuts (RSs): They learn concepts consistent with the symbolic knowledge by exploiting unintended semantics. RSs compromise reliability and generalization and, as we show in this paper, they are linked to NeSy models being overconfident about the predicted concepts. Unfortunately, the only trustworthy mitigation strategy requires collecting costly dense supervision over the concepts. Rather than attempting to avoid RSs altogether, we propose to ensure NeSy models are aware of the semantic ambiguity of the concepts they learn, thus enabling their users to identify and distrust low-quality concepts. Starting from three simple desiderata, we derive bears (BE Aware of Reasoning Shortcuts), an ensembling technique that calibrates the model’s concept-level confidence without compromising prediction accuracy, thus encouraging NeSy architectures to be uncertain about concepts affected by RSs. We show empirically that bears improves RS-awareness of several state-of-the-art NeSy models, and also facilitates acquiring informative dense annotations for mitigation purposes.</p>
@@ -186,6 +179,18 @@ $pip install -r requirements.txt
 </li>
 </ul>
 </section>
+<section id="using-bears">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">bears</span></code><a class="headerlink" href="#using-bears" title="Permalink to this heading"></a></h2>
+<p>After training the model, you can evaluate it using one of several strategies by running the program with the <code class="docutils literal notranslate"><span class="pre">--posthoc</span></code> flag and specifying the desired method with the <code class="docutils literal notranslate"><span class="pre">--type</span></code> option. The available evaluation strategies are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">frequentist</span></code>: Evaluates the model without any Bayesian approximation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mcdropout</span></code>: Applies Monte Carlo dropout for uncertainty estimation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ensemble</span></code>: Uses a standard deep ensemble of models.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">laplace</span></code>: Applies a Laplace approximation to the model’s weights.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bears</span></code>: Uses <code class="docutils literal notranslate"><span class="pre">bears</span></code>.</p></li>
+</ul>
+<p>Alternatively, to run all strategies at once, you can use the <code class="docutils literal notranslate"><span class="pre">--evaluate-all</span></code> flag.</p>
+</section>
 <section id="issues-report-bug-fixes-and-pull-requests">
 <h2>Issues report, bug fixes, and pull requests<a class="headerlink" href="#issues-report-bug-fixes-and-pull-requests" title="Permalink to this heading"></a></h2>
 <p>For all kind of problems do not hesitate to contact me. If you have additional mitigation strategies that you want to include as for others to test, please send me a pull request.</p>
@@ -268,14 +273,14 @@ sphinx-apidoc<span class="w"> </span>-P<span class="w"> </span>-o<span class="w"
 Where the added lines are: <code class="docutils literal notranslate"><span class="pre">self.model.model.model_possibilities</span> <span class="pre">=</span> <span class="pre">[None]</span> <span class="pre">*</span> <span class="pre">n_samples</span></code>
 and <code class="docutils literal notranslate"><span class="pre">self.model.model.model_possibilities[i]</span> <span class="pre">=</span> <span class="pre">sample</span></code></p>
 <p>Moreover in the file <code class="docutils literal notranslate"><span class="pre">laplace/curvature/curvature.py</span></code> change this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">BCE_forloop</span><span class="p">(</span><span class="n">tar</span><span class="p">,</span><span class="n">pred</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">BCE_forloop</span><span class="p">(</span><span class="n">tar</span><span class="p">,</span><span class="n">pred</span><span class="p">):</span>
     <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">binary_cross_entropy</span><span class="p">(</span><span class="n">tar</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">pred</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:</span><span class="mi">4</span><span class="p">])</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">tar</span><span class="p">)):</span>
         <span class="n">loss</span> <span class="o">=</span> <span class="n">loss</span> <span class="o">+</span> <span class="n">F</span><span class="o">.</span><span class="n">binary_cross_entropy</span><span class="p">(</span><span class="n">tar</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">pred</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="mi">4</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">loss</span>
 
-<span class="k">def</span> <span class="nf">CE_forloop</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">CE_forloop</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">):</span>
     <span class="n">y_trues</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">y_preds</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
@@ -292,7 +297,7 @@ and <code class="docutils literal notranslate"><span class="pre">self.model.mode
 
     <span class="k">return</span> <span class="n">loss</span>
 
-<span class="k">class</span> <span class="nc">CurvatureInterface</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CurvatureInterface</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Interface to access curvature for a model and corresponding likelihood.</span>
 <span class="sd">    A `CurvatureInterface` must inherit from this baseclass and implement the</span>
 <span class="sd">    necessary functions `jacobians`, `full`, `kron`, and `diag`.</span>
@@ -317,7 +322,7 @@ and <code class="docutils literal notranslate"><span class="pre">self.model.mode
 <span class="sd">        conversion factor between torch losses and base likelihoods</span>
 <span class="sd">        For example, \\(\\frac{1}{2}\\) to get to \\(\\mathcal{N}(f, 1)\\) from MSELoss.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">likelihood</span><span class="p">,</span> <span class="n">last_layer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">subnetwork_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">likelihood</span><span class="p">,</span> <span class="n">last_layer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">subnetwork_indices</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">assert</span> <span class="n">likelihood</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;regression&#39;</span><span class="p">,</span> <span class="s1">&#39;classification&#39;</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">likelihood</span> <span class="o">=</span> <span class="n">likelihood</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
@@ -518,7 +523,7 @@ and <code class="docutils literal notranslate"><span class="pre">self.model.mode
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Emanuele Marconato, Samuele Bortolotti, Emile van Krieken, Antonio Vergari, Andrea Passerini, Stefano Teso.</p>
+    <p>&#169; Copyright 2025, Emanuele Marconato, Samuele Bortolotti, Emile van Krieken, Antonio Vergari, Andrea Passerini, Stefano Teso.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
